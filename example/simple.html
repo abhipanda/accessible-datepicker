@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8"/>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Simple: Accessible Calendar</title>
+   <meta name="description" content="Accessible Calendar with CSS3"/>
+   <meta name="keywords" content="accessible, responsive, calendar, flexible, javascript, css3, media queries"/>
+   <link rel="stylesheet" type="text/css" href="../src/css/custom.css"/>
+   <link rel="stylesheet" type="text/css" href="../src/css/index.css"/>
+</head>
+<body>
+
+<label for="simpleCalendar"></label> <input id="simpleCalendar" class="a-cal simple" type="date">
+
+<div class="simple a-cal-popup">
+   <div class="a-cal-arrow-up"></div>
+   <div id="cal" class="a-cal-content">
+      <div class="date-nav-header">
+         <span class="prev" id="prev"><a href="#"> &lang; </a></span> <span class="left hook"></span>
+         <span class="month-year" id="label"> <select><option>Feb</option></select> <select><option>2017</option></select> </span> <span class="right hook"></span>
+         <span class="next" id="next"><a href="#"> &rang; </a></span>
+      </div>
+      <table id="days" class="days-dates">
+         <caption class="caption a-hidden">Availability of holiday accommodation <br>
+            <span>Column one has the location and size of accommodation, other columns show the type and number of properties available</span>
+         </caption>
+         <thead aria-label="">
+         <tr>
+            <th aria-label="Sunday">S</th>
+            <td aria-label="Monday">M</td>
+            <td aria-label="Tuesday">T</td>
+            <td aria-label="Wednesday">W</td>
+            <td aria-label="Thursday">T</td>
+            <td aria-label="Friday">F</td>
+            <td aria-label="Saturday">S</td>
+         </tr>
+         </thead>
+         <tbody>
+         <tr>
+            <td class="nil"></td>
+            <td class="nil"></td>
+            <td><a href="">1</a></td>
+            <td><a href="">2</a></td>
+            <td><a href="">3</a></td>
+            <td><a href="">4</a></td>
+            <td><a href="">5</a></td>
+         </tr>
+         <tr>
+            <td><a href="">6</a></td>
+            <td><a href="">7</a></td>
+            <td><a href="">8</a></td>
+            <td><a href="">9</a></td>
+            <td><a href="">10</a></td>
+            <td class="today"><a href="">11</a></td>
+            <td><a href="">12</a></td>
+         </tr>
+         <tr>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+         </tr>
+         <tr>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+         </tr>
+         <tr>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+            <td class="nil"></td>
+            <td class="nil"></td>
+            <td class="nil"></td>
+         </tr>
+         </tbody>
+         <tfoot></tfoot>
+      </table>
+
+   </div>
+
+</div>
+</body>
+</html>

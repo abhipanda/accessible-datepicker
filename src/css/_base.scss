@@ -1,0 +1,60 @@
+
+.a-cal-popup {
+
+  transition: .2s transform ease-in-out;
+  display: block;
+  position: absolute;
+  -webkit-box-shadow: 0 3px 12px 1px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 3px 12px 1px rgba(0, 0, 0, 0.26);
+  border-radius: 2px;
+  background: $a-cal-color;
+  margin-top: 12px;
+  transform: translateX(0px) translateY(0px);
+
+  > .a-cal-arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid $a-cal-color;
+    position: absolute;
+    margin-top: -10px;
+    margin-left: 0;
+  }
+
+  > .a-cal-content {
+    font: 13px/1.5 "Helvetica Neue", Helvatica, Arial, san-serif;
+    display: table;
+    padding: 10px;
+    > .date-nav-header {
+      margin-bottom: 10px;
+      text-align: center;
+      select {
+        -webkit-appearance: none;
+        min-width: 3em;
+        padding: 2px 5px;
+        border-radius: 0;
+        background: #fff;
+        border-color: #efefef;
+      }
+      > .prev {
+        float: left;
+      }
+      > .next {
+        float: right;
+      }
+
+    }
+  }
+
+  .a-hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+}
+

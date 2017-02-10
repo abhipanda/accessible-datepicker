@@ -1,0 +1,49 @@
+.a-cal-popup {
+  transition: .2s transform ease-in-out;
+  display: block;
+  position: absolute;
+  -webkit-box-shadow: 0 3px 12px 1px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 3px 12px 1px rgba(0, 0, 0, 0.26);
+  border-radius: 2px;
+  background: #ffffff;
+  margin-top: 12px;
+  transform: translateX(0px) translateY(0px); }
+  .a-cal-popup > .a-cal-arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ffffff;
+    position: absolute;
+    margin-top: -10px;
+    margin-left: 0; }
+  .a-cal-popup > .a-cal-content {
+    font: 13px/1.5 "Helvetica Neue", Helvatica, Arial, san-serif;
+    display: table;
+    padding: 10px; }
+    .a-cal-popup > .a-cal-content > .date-nav-header {
+      margin-bottom: 10px;
+      text-align: center; }
+      .a-cal-popup > .a-cal-content > .date-nav-header select {
+        -webkit-appearance: none;
+        min-width: 3em;
+        padding: 2px 5px;
+        border-radius: 0;
+        background: #fff;
+        border-color: #efefef; }
+      .a-cal-popup > .a-cal-content > .date-nav-header > .prev {
+        float: left; }
+      .a-cal-popup > .a-cal-content > .date-nav-header > .next {
+        float: right; }
+  .a-cal-popup .a-hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden; }
+
+.simple table.days-dates {
+  width: 237px; }
+
+/*# sourceMappingURL=index.css.map */
