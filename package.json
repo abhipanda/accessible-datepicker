@@ -1,0 +1,29 @@
+{
+  "name": "accessible-datepicker",
+  "version": "1.0.0",
+  "description": "Accessible Datepicker component",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhipanda/accessible-datepicker.git"
+  },
+  "keywords": [
+    "Simple",
+    "Accessible",
+    "Calendar",
+    "ES6",
+    "DatePicker"
+  ],
+  "author": "Abhi Panda",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/abhipanda/accessible-datepicker/issues"
+  },
+  "homepage": "https://github.com/abhipanda/accessible-datepicker#readme"
+}
