@@ -133,7 +133,7 @@
         margin: 0 -0.5px; }
       .com-cal .Common-Widgets-Calendar .displayWrapper .weekDaysGrid .col-weekDay {
         color: #000;
-        width: 33px;
+        width: 37px;
         line-height: 36px;
         font-family: "HelveticaNeue-Light",Helvetica,Arial,sans-serif;
         font-weight: 200;
@@ -161,7 +161,7 @@
           font-family: "HelveticaNeue-Light",Helvetica,Arial,sans-serif;
           font-weight: 200;
           font-size: 12px;
-          width: 33px;
+          width: 37px;
           line-height: 36px;
           text-align: center; }
         .com-cal .Common-Widgets-Calendar .displayWrapper .monthsGrid .col-month .month .weekDayGrid > div {
@@ -175,6 +175,8 @@
           .com-cal .Common-Widgets-Calendar .displayWrapper .monthsGrid .col-month .month .weekGrid .col-day.disabled .day {
             color: #c2c2c6;
             cursor: default; }
+          .com-cal .Common-Widgets-Calendar .displayWrapper .monthsGrid .col-month .month .weekGrid .col-day.today .day {
+            font-weight: 600; }
           .com-cal .Common-Widgets-Calendar .displayWrapper .monthsGrid .col-month .month .weekGrid .col-day .day {
             font-family: "HelveticaNeue-Light",Helvetica,Arial,sans-serif;
             font-weight: 200;

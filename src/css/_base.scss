@@ -163,7 +163,7 @@
         }
         .col-weekDay {
           color: #000;
-          width: 33px;
+          width: 37px;
           line-height: 36px;
           font-family: "HelveticaNeue-Light",Helvetica,Arial,sans-serif;
           font-weight: 200;
@@ -197,7 +197,7 @@
                 font-family: "HelveticaNeue-Light",Helvetica,Arial,sans-serif;
                 font-weight: 200;
                 font-size: 12px;
-                width: 33px;
+                width: 37px;
                 line-height: 36px;
                 text-align: center;
               }
@@ -215,6 +215,11 @@
                   .day {
                     color: #c2c2c6;
                     cursor: default;
+                  }
+                }
+                &.today{
+                  .day {
+                    font-weight: 600;
                   }
                 }
                 .day {
