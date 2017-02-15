@@ -68,12 +68,27 @@ class AccessibleDatepicker{
         32 != event.which && 13 != event.which || this.trigger("click");
     }
     addDayEventHandlers(a) {
-        a = a.getElementsByClassName(".col-day")[0];
-        if(a && a.hasAttribute('data-val') && !a.classList.contains('disabled')){
-            a.addEventListener("click.day", this.onDayClick);
-            a.addEventListener("mouseenter.day", this.onDayPreviewOver);
-            a.addEventListener("mouseleave.day", this.onDayPreviewOut);
+        let self = this;
+        if(a && a.length > 0){
+            for(let eIndx=0; eIndx < a.length; eIndx++){
+                let elem = a[eIndx];
+                self.addDayEventHandlers(elem);
+            }
+        }else{
+            a = a.querySelector(".col-day");
+            if(a && a.hasAttribute('data-val') && !a.classList.contains('disabled')){
+                a.addEventListener("click.day", this.onDayClick);
+                a.addEventListener("mouseenter.day", this.onDayPreviewOver);
+                a.addEventListener("mouseleave.day", this.onDayPreviewOut);
+            }
         }
+    }
+    update(a) {
+        this.removeDayEventHandlers(this.months.childNodes);
+        this.months.innerHTML = this.makeCalendarHTML(a);
+        this.addDayEventHandlers(this.months.childNodes);
+        this.updateNav();
+        this.setDisplayHeight();
     }
     onMonthChange() {
         //this.updateBuzzData();
@@ -122,7 +137,7 @@ class AccessibleDatepicker{
             this.animating = false;
             this.animation.classList.add("animating");
             this.animation.style.transform= "translateX(%spx)".format(-260 * a);
-            //this.setDisplayHeight(a);
+            this.setDisplayHeight(a);
                 setTimeout(function() {
                     b.animating = !1;
                     b.animation.classList.remove("animating");
@@ -153,15 +168,38 @@ class AccessibleDatepicker{
         this.removeDayEventHandlers(a);
         a.remove()
     }
-    removeDayEventHandlers(a) {
-        a = a.getElementsByClassName(".col-day")[0];
-        if(a && a.hasAttribute('data-val') && !a.classList.contains('disabled')){
-            a.removeEventListener("click.day", this.onDayClick);
-            a.removeEventListener("mouseenter.day", this.onDayPreviewOver);
-            //a.removeEventListener("focus.day");
-            a.removeEventListener("mouseleave.day", this.onDayPreviewOut);
-            //a.removeEventListener("blur.day");
+    removeDayEventHandlers(elem) {
+        let self = this;
+        if(elem && elem.length > 0){
+            for(let eIndx=0; eIndx < elem.length; eIndx++){
+                let childElem = elem[eIndx];
+                self.removeDayEventHandlers(childElem);
+            }
+        }else{
+            if(elem){
+                let cElem = elem.querySelector(".col-day");
+                if(cElem && cElem.hasAttribute('data-val') && !cElem.classList.contains('disabled')){
+                    cElem.removeEventListener("click.day", self.onDayClick);
+                    cElem.removeEventListener("mouseenter.day", self.onDayPreviewOver);
+                    //a.removeEventListener("focus.day");
+                    cElem.removeEventListener("mouseleave.day", self.onDayPreviewOut);
+                    //a.removeEventListener("blur.day");
+                }
+            }
         }
+
+    }
+    setDisplayHeight(a) {
+        a || (a = 0);
+        var b = 0, self = this;
+        for(let cIndx=0; cIndx < this.months.childNodes.length; cIndx++){
+            let c = self.months.childNodes[cIndx], childIndex = cIndx - a;
+            if (1 == childIndex || 2 == childIndex){
+                let monthElem = c.querySelector('.month');
+                b = Math.max(b, monthElem.offsetHeight);
+            }
+        }
+        this.displayWrapper.style.height = b+'px';
     }
     addMonth(a, b) {
         if(b){
